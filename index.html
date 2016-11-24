@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/">
     <title>Angular QuickStart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="css/materialize.css">
+    <style>
+      nav ul a,
+      nav .brand-logo {
+        color: #444;
+      }
+    </style>
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -21,5 +30,8 @@
 
   <body>
     <my-app>Loading AppComponent content here ...</my-app>
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/materialize.js" type="text/javascript"></script>
   </body>
 </html>
