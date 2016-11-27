@@ -1,14 +1,19 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { BeerGridComponent } from './ts/beer-grid.component';
 import { BeerDetailComponent } from './ts/beer-detail.component';
 import { BeerCreateComponent } from './ts/beer-create.component';
 
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 @NgModule({
-  imports:      [ BrowserModule,
+  imports:      [
+    BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -27,7 +32,10 @@ import { BeerCreateComponent } from './ts/beer-create.component';
         path: 'beer-create',
         component: BeerCreateComponent
       }
-    ])
+    ]),
+    AgmCoreModule.forRoot({
+      apiKey: '../mapKey.json'
+    })
   ],
   declarations: [ AppComponent, BeerGridComponent, BeerDetailComponent , BeerCreateComponent],
   bootstrap:    [ AppComponent ]

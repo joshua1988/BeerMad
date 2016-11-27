@@ -1,26 +1,49 @@
-<form action="#">
+<form>
   <h4>맥주 어땠나요?</h4>
-  <div class="file-field input-field">
-    <div class="btn">
-      <span>사진 업로드</span>
-      <input type="file">
+  <div class="row form-group">
+    <div class="col s6">
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>사진 업로드</span>
+          <input type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate form-control" type="text">
+        </div>
+      </div>
     </div>
-    <div class="file-path-wrapper">
-      <input class="file-path validate" type="text">
+    <div class="col s6">
+      <p class="range-field">
+        <!-- <span>0</span> -->
+        <span>당신의 별점은?</span>
+        <input type="range" class="form-control" id="test5" min="0" max="5" />
+        <!-- <span>5</span> -->
+      </p>
     </div>
   </div>
-  <div class="row">
-    <input id="last_name" type="text" class="validate">
-    <label for="last_name">맥주 평을 남겨주세요</label>
+  <div class="row form-group">
+    <div class="input-field col s12">
+      <input placeholder="맥주 평을 남겨주세요." id="reviewContent" type="text" class="validate form-control"
+        length="30" [(ngModel)]="beerReview.reviewContent" name="reviewContent">
+      <label for="reviewContent">맥주 평</label>
+
+      <!-- 스크립트 초기화 필요
+      $(document).ready(function() {
+        $('input#input_text, textarea#textarea1').characterCounter();
+      });
+      -->
+    </div>
   </div>
-  <div class="row">
-    <p class="range-field">
-      <input type="range" id="test5" min="0" max="5" />
-      <label for="test5">당신의 별점은?</label>
-    </p>
-  </div>
-  <div class="row">
-    <!-- 위치검색 : 네이버 지도 API -->
-    
+  <div class="row form-group">
+    <div class="input-field col s6">
+      <!-- 위치검색 : 네이버 지도 API -->
+      <input id="input1" type="text" class="validate form-control" [(ngModel)]="beerReview.reviewContent" name="reviewContent">
+      <label for="input1">식당 입력</label>
+    </div>
+    <div class="col s6">
+      <!-- angular2 google map api -->
+      <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      </sebm-google-map>
+    </div>
   </div>
 </form>
