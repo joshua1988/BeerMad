@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import "materialize-css";
+// import "angular2-materialize";
 
 @Component({
   selector: 'my-app',
