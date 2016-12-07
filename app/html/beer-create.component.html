@@ -16,7 +16,8 @@
       <p class="range-field">
         <!-- <span>0</span> -->
         <span>당신의 별점은?</span>
-        <input type="range" class="form-control" id="test5" min="0" max="5" />
+        <input type="range" class="form-control" id="test5" min="0" max="5"
+          [(ngModel)]="beerReview.reviewScore" name="reviewScore"/>
         <!-- <span>5</span> -->
       </p>
     </div>
@@ -37,13 +38,16 @@
   <div class="row form-group">
     <div class="input-field col s6">
       <!-- 위치검색 : 네이버 지도 API -->
-      <input id="input1" type="text" class="validate form-control" [(ngModel)]="beerReview.reviewContent" name="reviewContent">
-      <label for="input1">식당 입력</label>
+      <input id="restaurant" type="text" class="validate form-control"
+        [(ngModel)]="beerReview.restaurant" name="restaurant">
+      <label for="restaurant">식당 입력</label>
     </div>
     <div class="col s6">
+      <a class="waves-effect waves-light btn" (click)="addReview()">추가</a>
+
       <!-- angular2 google map api -->
-      <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-      </sebm-google-map>
+      <!-- <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      </sebm-google-map> -->
     </div>
   </div>
 </form>
