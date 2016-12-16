@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 // Body Parser MW
 app.use(bodyParser.json());
