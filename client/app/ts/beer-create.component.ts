@@ -16,6 +16,13 @@ export class BeerCreateComponent {
     restaurant : "Pangyo Craftworks",
   };
 
+  model = new BeerReview();
+  submitted = false;
+
+  addReview() {
+    this.model = new BeerReview();
+  }
+
   // Google Map
   title: string = 'My first angular2-google-maps project';
   lat: number = 51.678418;
