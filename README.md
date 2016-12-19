@@ -20,3 +20,29 @@
 ## Launch
 - At the root folder, type `node server.js`
 - It will launch the main page
+
+## Stack
+- MEAN2
+  - MongoDB
+  - Express
+  - Angular 2
+  - Node.js
+
+## Coding Convention
+- Javascript
+
+  ``` javascript
+  // 객체 선언
+  var a, b, c = function() {
+      // ...
+  }, d = [ "Time", 2 ];
+
+  // 모듈화 패턴
+  var MODULE = {};
+  MODULE.count = function() {
+
+  };
+  MODULE.props = 3;
+  ```
+
+TBD
