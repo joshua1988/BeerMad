@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-// import "materialize-css";
-// import "angular2-materialize";
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'main page';
+var mock_heroes_1 = require("../../ts/mock-heroes");
+var HeroService = (function () {
+    function HeroService() {
     }
-    return AppComponent;
+    // getHeroes(): Hero[] {
+    //   return HEROES;
+    // }
+    HeroService.prototype.getHeroes = function () {
+        return Promise.resolve(mock_heroes_1.HEROES);
+    };
+    return HeroService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: 'app/html/app.component.html',
-        styleUrls: ['app/css/app.component.css']
-    }),
+HeroService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], HeroService);
+exports.HeroService = HeroService;
+//# sourceMappingURL=hero.service.js.map

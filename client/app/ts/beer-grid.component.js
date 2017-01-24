@@ -8,19 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
+var hero_service_1 = require("./service/hero.service");
 var BeerGridComponent = (function () {
-    function BeerGridComponent() {
+    function BeerGridComponent(heroService) {
+        this.heroService = heroService;
     }
-    BeerGridComponent = __decorate([
-        core_1.Component({
-            selector: 'beer-grid',
-            templateUrl: 'app/html/beer-grid.component.html',
-            styleUrls: ['app/css/beer-grid.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], BeerGridComponent);
+    BeerGridComponent.prototype.ngOnInit = function () {
+        this.getHeroes();
+    };
+    BeerGridComponent.prototype.getHeroes = function () {
+        var _this = this;
+        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+    };
     return BeerGridComponent;
 }());
+BeerGridComponent = __decorate([
+    core_1.Component({
+        selector: 'beer-grid',
+        templateUrl: 'app/html/beer-grid.component.html',
+        styleUrls: ['app/css/beer-grid.component.css']
+    }),
+    __metadata("design:paramtypes", [hero_service_1.HeroService])
+], BeerGridComponent);
 exports.BeerGridComponent = BeerGridComponent;
 //# sourceMappingURL=beer-grid.component.js.map

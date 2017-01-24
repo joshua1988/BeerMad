@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var BeerReview_1 = require('./vo/BeerReview');
+var core_1 = require("@angular/core");
+var BeerReview_1 = require("./vo/BeerReview");
 var BeerCreateComponent = (function () {
     function BeerCreateComponent() {
         this.beerReview = {
@@ -29,14 +29,14 @@ var BeerCreateComponent = (function () {
     BeerCreateComponent.prototype.addReview = function () {
         this.model = new BeerReview_1.BeerReview();
     };
-    BeerCreateComponent = __decorate([
-        core_1.Component({
-            selector: 'beer-create',
-            templateUrl: 'app/html/beer-create.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], BeerCreateComponent);
     return BeerCreateComponent;
 }());
+BeerCreateComponent = __decorate([
+    core_1.Component({
+        selector: 'beer-create',
+        templateUrl: 'app/html/beer-create.component.html'
+    }),
+    __metadata("design:paramtypes", [])
+], BeerCreateComponent);
 exports.BeerCreateComponent = BeerCreateComponent;
 //# sourceMappingURL=beer-create.component.js.map

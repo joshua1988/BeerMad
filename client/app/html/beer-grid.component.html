@@ -4,7 +4,9 @@
   <div class="col s4"><a href=""><img src="images/beer3.png"></a></div>
 </div>
 <div class="row">
-  <div class="col s4"><a href=""><img src="images/beer1.png"></a></div>
-  <div class="col s4"><a href=""><img src="images/beer2.png"></a></div>
-  <div class="col s4"><a href=""><img src="images/beer3.png"></a></div>
+  <ul class="heroes">
+    <li *ngFor = "let hero of heroes">
+      {{hero.name}}
+    </li>
+  </ul>
 </div>

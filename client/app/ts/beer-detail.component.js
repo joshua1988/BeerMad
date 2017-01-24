@@ -8,20 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var BeerDetailComponent = (function () {
     function BeerDetailComponent() {
         // title = 'Tour of Heroes';
         this.name = 'Beer is the proof that God loves us';
     }
-    BeerDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'beer-detail',
-            template: "\n    <p>Let's see the detail view</p>\n    <div>{{name}}</div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], BeerDetailComponent);
     return BeerDetailComponent;
 }());
+BeerDetailComponent = __decorate([
+    core_1.Component({
+        selector: 'beer-detail',
+        template: "\n    <p>Let's see the detail view</p>\n    <div>{{name}}</div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], BeerDetailComponent);
 exports.BeerDetailComponent = BeerDetailComponent;
 //# sourceMappingURL=beer-detail.component.js.map

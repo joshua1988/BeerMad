@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from './ts/vo/hero';
 // import "materialize-css";
 // import "angular2-materialize";
 
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: 'app/html/app.component.html',
   styleUrls: ['app/css/app.component.css']
 })
-export class AppComponent  { title = 'main page'; }
+
+export class AppComponent {
+  title = 'main page';
+}
