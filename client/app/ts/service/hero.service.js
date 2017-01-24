@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("../../rxjs-extensions");
+var Observable_1 = require("rxjs/Observable");
 // import { HEROES } from '../../ts/mock-heroes';
 var HeroService = (function () {
     function HeroService(http) {
@@ -28,17 +29,19 @@ var HeroService = (function () {
             .map(function (r) { return r.json().data; })
             .catch(this.handleError);
     };
-    // update(hero: Hero): Promise<Hero> {
-    //   const url = `${this.heroesUrl}/${hero.id}`;
-    //   return this.http
-    //     .put(url, JSON.stringify(hero), {headers: this.headers})
-    //     .toPromise()
-    //     .then(() => hero)
-    //     .catch(this.handleError);
-    // }
     HeroService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
+        // In a real world app, we might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof http_1.Response) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return Observable_1.Observable.throw(errMsg);
     };
     return HeroService;
 }());

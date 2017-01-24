@@ -1,8 +1,10 @@
 "use strict";
+require("rxjs/Rx");
 // Observable class extensions
 require("rxjs/add/observable/of");
 require("rxjs/add/observable/throw");
 // Observable operators
+require("rxjs/add/operator/toPromise");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/debounceTime");
 require("rxjs/add/operator/distinctUntilChanged");
