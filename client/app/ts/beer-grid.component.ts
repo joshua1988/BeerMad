@@ -9,6 +9,7 @@ import { HeroService } from './service/hero.service';
 })
 
 export class BeerGridComponent implements OnInit{
+  errorMessage: string;
   heroes: Hero[];
 
   constructor(private heroService: HeroService) { }
@@ -18,7 +19,12 @@ export class BeerGridComponent implements OnInit{
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    // this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+
+    this.heroService.getHeroes()
+                 .subscribe(
+                   heroes => this.heroes = heroes,
+                   error =>  this.errorMessage = <any>error);
   }
 
   // getHeroes(): void {
