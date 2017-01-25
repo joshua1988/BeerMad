@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-require("../../rxjs-extensions");
+require("../modules/rxjs-extensions");
 var Observable_1 = require("rxjs/Observable");
 // import { HEROES } from '../../ts/mock-heroes';
 var HeroService = (function () {
@@ -22,7 +22,8 @@ var HeroService = (function () {
         // getHeroes(): Promise<Hero[]> {
         //   return Promise.resolve(HEROES);
         // }
-        this.heroesUrl = 'api/heroes'; // URL to web api
+        // private heroesUrl = 'api/heroes';  // URL to web api
+        this.heroesUrl = "http://localhost:3000/beer/reviews";
     }
     HeroService.prototype.getHeroes = function () {
         return this.http.get(this.heroesUrl)

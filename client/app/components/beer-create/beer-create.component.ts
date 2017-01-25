@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { SebmGoogleMap } from 'angular2-google-maps/core';
-import { BeerReview } from './vo/BeerReview';
+import { BeerReview } from '../../vo/BeerReview';
 
 @Component({
   selector: 'beer-create',
-  templateUrl: 'app/html/beer-create.component.html'
+  templateUrl: 'app/components/beer-create/beer-create.component.html'
 })
 export class BeerCreateComponent {
 

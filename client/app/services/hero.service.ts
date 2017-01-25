@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
-import '../../rxjs-extensions';
+
+import '../modules/rxjs-extensions';
 import { Observable } from 'rxjs/Observable';
 
-import { Hero } from '../../ts/vo/hero';
+import { Hero } from '../vo/hero';
 // import { HEROES } from '../../ts/mock-heroes';
 
 @Injectable()
@@ -16,7 +17,8 @@ export class HeroService {
   //   return Promise.resolve(HEROES);
   // }
 
-  private heroesUrl = 'api/heroes';  // URL to web api
+  // private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl = "http://localhost:3000/beer/reviews";
   constructor(private http: Http) { }
 
   getHeroes(): Observable<Hero[]> {

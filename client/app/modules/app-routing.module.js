@@ -7,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var beer_grid_component_1 = require("./ts/beer-grid.component");
-var beer_detail_component_1 = require("./ts/beer-detail.component");
-var beer_create_component_1 = require("./ts/beer-create.component");
+var beer_grid_component_1 = require("../components/beer-grid/beer-grid.component");
+var beer_detail_component_1 = require("../components/beer-detail/beer-detail.component");
+var beer_create_component_1 = require("../components/beer-create/beer-create.component");
 var routes = [
     { path: '', redirectTo: '/beer-grid', pathMatch: 'full' },
     { path: 'beer-grid', component: beer_grid_component_1.BeerGridComponent },

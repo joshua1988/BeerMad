@@ -1,9 +1,9 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { BeerGridComponent } from './ts/beer-grid.component';
-import { BeerDetailComponent } from './ts/beer-detail.component';
-import { BeerCreateComponent } from './ts/beer-create.component';
+import { BeerGridComponent } from '../components/beer-grid/beer-grid.component';
+import { BeerDetailComponent } from '../components/beer-detail/beer-detail.component';
+import { BeerCreateComponent } from '../components/beer-create/beer-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/beer-grid', pathMatch: 'full' },

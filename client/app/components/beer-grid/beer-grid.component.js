@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var hero_service_1 = require("./service/hero.service");
+var hero_service_1 = require("../../services/hero.service");
 var BeerGridComponent = (function () {
     function BeerGridComponent(heroService) {
         this.heroService = heroService;
@@ -20,16 +20,19 @@ var BeerGridComponent = (function () {
     BeerGridComponent.prototype.getHeroes = function () {
         // this.heroService.getHeroes().then(heroes => this.heroes = heroes);
         var _this = this;
-        this.heroService.getHeroes()
-            .subscribe(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
+        // this.heroService.getHeroes()
+        //              .subscribe(
+        //                heroes => this.heroes = heroes,
+        //                error =>  this.errorMessage = <any>error);
+        this.heroService.getHeroes().subscribe(function (heroes) { return console.log(heroes); }, function (error) { return _this.errorMessage = error; });
     };
     return BeerGridComponent;
 }());
 BeerGridComponent = __decorate([
     core_1.Component({
         selector: 'beer-grid',
-        templateUrl: 'app/html/beer-grid.component.html',
-        styleUrls: ['app/css/beer-grid.component.css']
+        templateUrl: 'app/components/beer-grid/beer-grid.component.html',
+        styleUrls: ['app/components/beer-grid/beer-grid.component.css']
     }),
     __metadata("design:paramtypes", [hero_service_1.HeroService])
 ], BeerGridComponent);

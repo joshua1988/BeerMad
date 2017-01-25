@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var BeerReview_1 = require("./vo/BeerReview");
+var BeerReview_1 = require("../../vo/BeerReview");
 var BeerCreateComponent = (function () {
     function BeerCreateComponent() {
         this.beerReview = {
@@ -31,7 +31,7 @@ var BeerCreateComponent = (function () {
 BeerCreateComponent = __decorate([
     core_1.Component({
         selector: 'beer-create',
-        templateUrl: 'app/html/beer-create.component.html'
+        templateUrl: 'app/components/beer-create/beer-create.component.html'
     })
 ], BeerCreateComponent);
 exports.BeerCreateComponent = BeerCreateComponent;
