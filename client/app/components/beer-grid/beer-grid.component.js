@@ -18,13 +18,8 @@ var BeerGridComponent = (function () {
         this.getHeroes();
     };
     BeerGridComponent.prototype.getHeroes = function () {
-        // this.heroService.getHeroes().then(heroes => this.heroes = heroes);
         var _this = this;
-        // this.heroService.getHeroes()
-        //              .subscribe(
-        //                heroes => this.heroes = heroes,
-        //                error =>  this.errorMessage = <any>error);
-        this.heroService.getHeroes().subscribe(function (heroes) { return console.log(heroes); }, function (error) { return _this.errorMessage = error; });
+        this.heroService.getHeroes().subscribe(function (reviews) { return _this.beerReviews = reviews; }, function (error) { return _this.errorMessage = error; });
     };
     return BeerGridComponent;
 }());

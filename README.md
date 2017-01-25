@@ -45,4 +45,24 @@
   MODULE.props = 3;
   ```
 
+- MongoDB
+
+  ``` javascript
+  {
+    "beerName" : "Stella",
+    "reviewScore" : 4,
+    // ...
+  }
+  ```
+
+- Angular Class Property
+
+  ``` javascript
+  export class BeerReview {
+    public beerName: string;
+    public reviewScore : number;
+    // ...
+  }
+  ```
+
 TBD

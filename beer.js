@@ -15,11 +15,12 @@ router.get('/reviews', function(req, res, next) {
     //     res.json(docs);
     // });
 
-    db.review.find(function (err, docs) {
+    db.review.find(function (err, reviews) {
         if (err) {
             res.send(err);
         }
-        res.json(docs);
+        res.json(reviews);
+        console.log("reviews : ", reviews);
     });
 });
 

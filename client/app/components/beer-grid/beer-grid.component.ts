@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../vo/hero';
+import { BeerReview } from '../../vo/BeerReview';
 import { HeroService } from '../../services/hero.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { HeroService } from '../../services/hero.service';
 export class BeerGridComponent implements OnInit{
   errorMessage: string;
   heroes: Hero[];
+  beerReviews: BeerReview[];
 
   constructor(private heroService: HeroService) { }
 
@@ -27,7 +29,8 @@ export class BeerGridComponent implements OnInit{
     //                error =>  this.errorMessage = <any>error);
 
     this.heroService.getHeroes().subscribe(
-                   heroes => console.log(heroes),
+                   reviews => this.beerReviews = reviews,
+                  // reviews => console.log(reviews),
                    error =>  this.errorMessage = <any>error
                  );
   }

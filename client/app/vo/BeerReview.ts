@@ -1,7 +1,10 @@
 export class BeerReview {
   public _id : number;
-  public reviewContent : string;
+  public beerName: string;
   public reviewScore : number;
-  public image : string;
   public restaurant : string;
+  public reviewContent : string;
+
+  // public image : string;
+  // public restaurant : string;
 }

@@ -5,6 +5,7 @@ import '../modules/rxjs-extensions';
 import { Observable } from 'rxjs/Observable';
 
 import { Hero } from '../vo/hero';
+import { BeerReview } from '../vo/BeerReview';
 // import { HEROES } from '../../ts/mock-heroes';
 
 @Injectable()
@@ -18,13 +19,21 @@ export class HeroService {
   // }
 
   // private heroesUrl = 'api/heroes';  // URL to web api
-  private heroesUrl = "http://localhost:3000/beer/reviews";
+  private heroesUrl = "beer/reviews";
   constructor(private http: Http) { }
 
-  getHeroes(): Observable<Hero[]> {
-    return this.http.get(this.heroesUrl)
-             .map((r: Response) => r.json().data as Hero[])
-             .catch(this.handleError);
+  getHeroes(): Observable<BeerReview[]> {
+    return this.http
+            .get(this.heroesUrl)
+            //  .map((r: Response) => r.json().data)
+            .map(this.extractData)
+            .catch(this.handleError);
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    // return body.data || { };
+    return body;
   }
 
   private handleError (error: Response | any) {

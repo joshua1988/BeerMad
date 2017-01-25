@@ -12,26 +12,22 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("../modules/rxjs-extensions");
 var Observable_1 = require("rxjs/Observable");
-// import { HEROES } from '../../ts/mock-heroes';
 var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
-        // getHeroes(): Hero[] {
-        //   return HEROES;
-        // }
-        // getHeroes(): Promise<Hero[]> {
-        //   return Promise.resolve(HEROES);
-        // }
-        // private heroesUrl = 'api/heroes';  // URL to web api
-        this.heroesUrl = "http://localhost:3000/beer/reviews";
+        this.heroesUrl = "beer/reviews";
     }
     HeroService.prototype.getHeroes = function () {
-        return this.http.get(this.heroesUrl)
-            .map(function (r) { return r.json().data; })
+        return this.http
+            .get(this.heroesUrl)
+            .map(this.extractData)
             .catch(this.handleError);
     };
+    HeroService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body;
+    };
     HeroService.prototype.handleError = function (error) {
-        // In a real world app, we might use a remote logging infrastructure
         var errMsg;
         if (error instanceof http_1.Response) {
             var body = error.json() || '';
