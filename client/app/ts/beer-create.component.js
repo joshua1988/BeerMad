@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var BeerReview_1 = require("../../vo/BeerReview");
+var BeerReview_1 = require("./vo/BeerReview");
 var BeerCreateComponent = (function () {
     function BeerCreateComponent() {
         this.beerReview = {
@@ -34,7 +34,7 @@ var BeerCreateComponent = (function () {
 BeerCreateComponent = __decorate([
     core_1.Component({
         selector: 'beer-create',
-        templateUrl: 'app/components/beer-create/beer-create.component.html'
+        templateUrl: 'app/html/beer-create.component.html'
     }),
     __metadata("design:paramtypes", [])
 ], BeerCreateComponent);
