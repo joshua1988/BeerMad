@@ -4,24 +4,24 @@ var router = express.Router();
 var mongojs = require('mongojs');
 
 // Mongo Lab
-var db = mongojs('mongodb://josh:josh@ds129459.mlab.com:29459/beermad');
+// var db = mongojs('mongodb://josh:josh@ds129459.mlab.com:29459/beermad');
 
 // Local MongoDB
 var reviewDB = mongojs('beermad', ['review']); // mongojs('db name', ['collection name']);
 
 router.get('/reviews', function(req, res, next) {
     // res.send("review");
-    // reviewDB.review.find(function(err, docs) {
-    //     res.json(docs);
-    // });
-
-    db.review.find(function (err, reviews) {
-        if (err) {
-            res.send(err);
-        }
-        res.json(reviews);
-        console.log("reviews : ", reviews);
+    reviewDB.review.find(function(err, docs) {
+        res.json(docs);
     });
+
+    // db.review.find(function (err, reviews) {
+    //     if (err) {
+    //         res.send(err);
+    //     }
+    //     res.json(reviews);
+    //     console.log("reviews : ", reviews);
+    // });
 });
 
 router.get('/review/:id', function(req, res, next) {
