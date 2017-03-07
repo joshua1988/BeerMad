@@ -30,6 +30,14 @@ export class HeroService {
             .catch(this.handleError);
   }
 
+  addHeroes(body: BeerReview): Observable<BeerReview[]> {
+    return this.http
+            .post("beer/review", body)
+            //  .map((r: Response) => r.json().data)
+            .map(this.extractData)
+            .catch(this.handleError);
+  }
+
   private extractData(res: Response) {
     let body = res.json();
     // return body.data || { };

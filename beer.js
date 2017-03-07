@@ -25,7 +25,7 @@ router.get('/reviews', function(req, res, next) {
 });
 
 router.get('/review/:id', function(req, res, next) {
-    db.review.findOne({_id: mongojs.ObjectId(req.params.id)},function (err, docs) {
+    reviewDB.review.findOne({_id: mongojs.ObjectId(req.params.id)},function (err, docs) {
         if (err) {
             res.send(err);
         }
@@ -34,14 +34,15 @@ router.get('/review/:id', function(req, res, next) {
 });
 
 router.post('/review', function (req, res, next) {
+    // console.log(req.body);
     var review = req.body;
-    if (!review.beer_name) {
+    if (!review.beerName) {
         res.status(400);
         res.json({
             "error": "Bad data"
         });
     } else {
-        db.review.save(review, function (err, docs) {
+        reviewDB.review.save(review, function (err, docs) {
             if(err) res.send(err);
             res.json(docs);
         });
@@ -49,7 +50,7 @@ router.post('/review', function (req, res, next) {
 });
 
 router.delete('/review/:id', function(req, res, next) {
-    db.review.remove({_id: mongojs.ObjectId(req.params.id)}, function (err, docs) {
+    reviewDB.review.remove({_id: mongojs.ObjectId(req.params.id)}, function (err, docs) {
         if (err) {
             res.send(err);
         }
@@ -62,7 +63,7 @@ router.put('/review/:id', function(req, res, next) {
     var review = req.body;
     var updReview = {};
 
-    db.review.update({_id: mongojs.ObjectId(req.params.id)}, updReview, {}, function (err, docs) {
+    reviewDB.review.update({_id: mongojs.ObjectId(req.params.id)}, updReview, {}, function (err, docs) {
         if (err) {
             res.send(err);
         }

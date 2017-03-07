@@ -42,12 +42,16 @@
         [(ngModel)]="beerReview.restaurant" name="restaurant">
       <label for="restaurant">식당 입력</label>
     </div>
-    <div class="col s6">
-      <a class="waves-effect waves-light btn" (click)="addReview()">추가</a>
-
-      <!-- angular2 google map api -->
-      <!-- <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-      </sebm-google-map> -->
+    <div class="input-field col s6">
+      <!-- 위치검색 : 네이버 지도 API -->
+      <input id="beerName" type="text" class="validate form-control"
+        [(ngModel)]="beerReview.beerName" name="beerName">
+      <label for="restaurant">맥주 이름</label>
     </div>
   </div>
+  <a class="waves-effect waves-light btn" (click)="addReview()">추가</a>
 </form>
+
+<!-- angular2 google map api -->
+<!-- <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+</sebm-google-map> -->
